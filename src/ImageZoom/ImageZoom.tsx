@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import "./ImageZoom.css"
 
 interface ImageZoomProps {
   src: string;
+  name: string;
+  containerClassName?: string;
+  containerStyle?: React.CSSProperties;
+  imageClassName?: string;
+  imageStyle?: React.CSSProperties;
 }
 
-const ImageZoom: React.FC<ImageZoomProps> = ({ src }) => {
+const ImageZoom: React.FC<ImageZoomProps> = ({ src, name, containerClassName, containerStyle, imageClassName, imageStyle }) => {
   const [zoom, setZoom] = useState<number>(1);
   const [isVertical, setIsVertical] = useState<boolean>(false);
 
@@ -27,23 +31,28 @@ const ImageZoom: React.FC<ImageZoomProps> = ({ src }) => {
     }
   };
 
-  const imageStyle: React.CSSProperties = {
+  const zoomStyle: React.CSSProperties = {
     cursor: zoom > 1 ? 'zoom-out' : 'zoom-in',
     transform: `scale(${zoom})`,
     transformOrigin: 'center center',
     objectFit: isVertical ? 'contain' : 'cover',
   };
 
+  const combinedStyle: React.CSSProperties = {
+    ...zoomStyle,
+    ...imageStyle,
+  };
+
   return (
-    <div className="image-container" onWheel={handleWheel}>
+    <div className={containerClassName} style={containerStyle} onWheel={handleWheel}>
       <img
         src={src}
-        alt="Zoomable"
-        className="zoomable-image"
-        style={imageStyle}
+        alt={name}
+        className={imageClassName}
+        style={combinedStyle} 
       />
     </div>
-  );
+  )
 };
 
 export default ImageZoom;
