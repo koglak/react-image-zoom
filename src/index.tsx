@@ -10,7 +10,12 @@ root.render(
   <React.StrictMode>
     <ImageZoom
       src={"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgByBT5IiAT_a2x9pUVb4VMoOrlzHH7Jrzj-HB5jzHlR4lNLMS"}
-      name={"dog"} />
+      name={"dog"}
+      containerClassName={"imageContainer"}
+      containerStyle={{width: "auto", height: "auto"}}
+      imageClassName={"imageClassName"}
+      imageStyle={{width: "auto", height: "auto"}}
+      />
   </React.StrictMode>
 );
 
