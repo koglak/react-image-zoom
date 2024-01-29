@@ -1,6 +1,6 @@
 # react-single-image-zoom
 
-`react-image-zoom` is a React component that allows for easy image zoom functionality on wheel events within your React applications.
+`react-single-image-zoom` is a React component that allows for easy image zoom functionality on wheel events within your React applications.
 
 ## Features
 
