@@ -17,7 +17,7 @@
 Install the component using npm:
 
 ```sh
-npm install react-image-zoom
+npm i react-single-image-zoom
 ```
 
 
