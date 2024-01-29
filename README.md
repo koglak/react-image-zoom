@@ -9,6 +9,9 @@
 - Customizable styles via className or inline style.
 - Support for TypeScript.
 
+![react-image-zoom-example](https://github.com/koglak/react-image-zoom/assets/24697147/c1f62e4c-6451-4382-9dbb-df3302232e81)
+
+
 ## Installation
 
 Install the component using npm:
